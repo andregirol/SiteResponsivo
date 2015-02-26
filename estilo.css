@@ -154,3 +154,37 @@ a, a:link, a:visited {
         margin: 0 auto;
         width: 900px;
     }
+
+/*==========================================================
+Seção .CONTAINER - Conteúdo com 3 colunas
+==========================================================*/
+
+.container {
+    background-color:#FE9481;
+    height: 417px;
+    padding: 30px;
+    max-width: 1200px;
+}
+    .desktop, .tablet, .mobile {
+        float:left;
+        position: relative;
+        text-align: center;
+        width: 360px;
+    }
+
+    .desktop, .tablet {
+        margin-right:30px;
+    }
+
+    .mobile {
+        background-color: #9C8CB9;
+        margin-right: 0px;
+    }
+
+    .desktop {
+        background-color: #FE9481;
+    }
+
+    .tablet {
+        background-color: #FCDA92;
+    }
