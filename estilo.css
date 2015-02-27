@@ -188,3 +188,8 @@ Seção .CONTAINER - Conteúdo com 3 colunas
     .tablet {
         background-color: #FCDA92;
     }
+
+    #desktop img, #tablet img, #mobile img{
+     margin: 10px auto -15px auto;
+     text-align:center;
+    }
