@@ -193,3 +193,59 @@ Seção .CONTAINER - Conteúdo com 3 colunas
      margin: 10px auto -15px auto;
      text-align:center;
     }
+
+    /*
+        Texto do Container
+    */
+
+    .container h3 {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 300;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+        text-shadow: none;
+    }
+
+    .container p {
+        background-color: #fff;
+        float: left;
+        height: 160px;
+        padding: 7px;
+        position: absolute;
+        width-max: 360px;
+        text-align: justify;
+        top: 225px;
+    }
+
+    /*
+        Formataçao dos Botões
+    */
+
+    span.btn {
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: -2px;
+        height: 27px;
+        margin-top: 30px;
+        position: absolute;
+        right: 1px;
+        text-align: center;
+        text-shadow: none;
+        width: 120px;
+    }
+
+    span.btn a {
+        color: #fff;
+        padding: 2px 4px;+
+    }
+
+    .desktop span.btn a{
+        background-color:#FE9481;
+    }
+    .tablet span.btn a{
+        background-color:#FCDA92;
+    }
+    .mobile span.btn a{
+        background-color:#9C8CB9;
+    }
