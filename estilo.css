@@ -17,7 +17,7 @@ Fim do NORMALIZE
 header {
     border-bottom:1px solid #E0E0E0;
     height: 150px;
-    width:1200px;
+    width: 100%; /* 1200px / 1200px = 1 * 100 = 100% - contexto = próprio body*/
 }
 
     header h1 a {
@@ -26,7 +26,7 @@ header {
         float: left;
         height: 139px;
         text-ident: -9999;
-        width: 302px;
+        width: 25.166666667%; /* 302px (largura original) / 1200px (largura do header, seu pai)*/
     }
 
 /*===============================
@@ -37,7 +37,7 @@ header {
         float: right;
         margin-top: 78px;
         text-align: right;
-        width:490px;
+        width: 40,833333333% ; /* 490px (largura original) / 1200px (largura do header, seu pai) */
     }
         nav ul {
             list-style-type: none;
@@ -80,7 +80,12 @@ body{
 }
 .center{
      margin: 0 auto; /*centralizando o conteúdo no navegador*/
-     width: 1200px; /*largura do layout*/
+
+/*===================
+     LAYOUT FLUIDO!
+======================*/
+     max-width: 1200px; /*largura do layout*/
+     width: 90%;
 }
 
 /*
