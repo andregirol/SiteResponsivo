@@ -26,7 +26,7 @@ header {
         float: left;
         height: 139px;
         text-ident: -9999;
-        width: 25.166666667%; /* 302px (largura original) / 1200px (largura do header, seu pai)*/
+        width: 25.16666666665%; /* 302px (largura original) / 1200px (largura do header, seu pai)*/
     }
 
 /*===============================
@@ -37,7 +37,7 @@ header {
         float: right;
         margin-top: 78px;
         text-align: right;
-        width: 40,833333333% ; /* 490px (largura original) / 1200px (largura do header, seu pai) */
+        width: 40.83333333% ; /* 490px (largura original) / 1200px (largura do header, seu pai) */
     }
         nav ul {
             list-style-type: none;
@@ -48,23 +48,25 @@ header {
             }
 
                 nav ul li a {
-                    margin-right: 30px; /* Margem à direita de cada link */
+                    margin-right: 2.5%; /* Margem à direita de cada link
+                        Conversão para fluido: 30px original / 1200px (largura do pai, nav)
+                    */
                 }
 
-                nav ul li:nth-child(5) a {
-                    margin-right: 0px; /* Margem à direita do 5º elemento da lista tem valor 0 */
+                    nav ul li:nth-child(5) a {
+                        margin-right: 0%; /* Margem à direita do 5º elemento da lista tem valor 0 */
+                    }
+
+                nav a:link, nav a:visited {
+                    color: #999;
+                    font-size: 1.2222222222em; /* 22px (original) / 18px (body - contexto /pai) */
+                    font-weight: 300;
+                    letter-spacing: -0.0909090909em; /* -2px (original) / 22px (contexto da própria letra)*/
+                    line-height: 1.18181818182em; /* 26px (original) / 22px (contexto da própria letra) */
+                    display: inline-block;
                 }
 
-    nav a:link, nav a:visited {
-        color: #999;
-        font-size: 22px;
-        font-weight: 300;
-        letter-spacing: -2px;
-        line-height: 26px;
-        display: inline-block;
-    }
-
-    nav a.ativo:link, nav a:hover {
+    nav a.ativo:link , nav a:hover {
         color: #FE9380;
     }
 
@@ -78,17 +80,20 @@ body{
      text-align: left; /*alinhando o texto à esquerda*/
      text-shadow:1px 1px 0px #fff; /*sombreamento para as fontes do site*/
 }
+
 .center{
      margin: 0 auto; /*centralizando o conteúdo no navegador*/
 
-/*===================
+/*******************
      LAYOUT FLUIDO!
-======================*/
+**********************/
      max-width: 1200px; /*largura do layout*/
      width: 90%;
 }
 
-/*
+/* =========================
+ *      CLEARFIX
+ * =========================
 .clearfix usado para adicionar um espaço vazio antes e depois dos elementos
 evitando que os floats se aglomerem
 */
@@ -138,6 +143,12 @@ a, a:link, a:visited {
     text-decoration: none; /* removendo underline do link*/
 }
 
+a:hover {
+    color:#FE5E41;
+	text-decoration:underline; /*insere uma linha sob o link*/
+	text-shadow:none; /*retira a sombra da fonte*/
+}
+
 /* =================================
             Seção Chamada
 ====================================*/
@@ -145,19 +156,19 @@ a, a:link, a:visited {
 .chamada {
     height:290px;
     text-align:center;
-    width; 1200px;
+    width; 100%; /* 1200px (largura original) / 1200px (contexto do pai: body)*/
 }
 
     h2 span {
-        font-size:60px;
+        font-size: 1em; /* 60px (manter o próprio contexto) / 60px (contexto original do elemento h2)  */
         font-weight: 300;
-        letter-spacing: -2px;
-        line-height: 60px;
+        letter-spacing: -0.03333333333em; /*-2px (original) / 60px (próprio elemento) */
+        line-height: 1em; /* O mesmo que font-size*/
     }
 
     .chamada h3 {
         margin: 0 auto;
-        width: 900px;
+        width: 75% /* 900px (largura original) / 1200px (contexto do pai: chamada -> mesmo que body)*/;
     }
 
 /*==========================================================
@@ -167,18 +178,30 @@ Seção .CONTAINER - Conteúdo com 3 colunas
 .container {
     background-color:#FE9481;
     height: 417px;
-    padding: 30px;
-    max-width: 1200px;
+    padding: 2.5%; /* 30px (largura original) / 1200px (largura original do PRÓPRIO elemento, pois é padding)*/
+    max-width: 95%px; /* 1200 (originais) / 1200 (largura pai - body) - 2.5 de padding de cada lado */
+
+    /* padding left + padding right + objeto = width TOTAL */
+    width: 95%%; /* Contexto: body (1200px largura original)*/
 }
+
+    /*Por causa do padding, a largura, width, do .container passou de 1.200px para 1.140px (95%)*/
     .desktop, .tablet, .mobile {
         float:left;
         position: relative;
         text-align: center;
-        width: 360px;
+
+        /* width:
+         *
+         * 360px (largura original) / 1140px (referente ao pai,
+         * agora com 95% da largura devido à conversão de larguras
+
+        */
+        width: 31.57894736842105% ;
     }
 
     .desktop, .tablet {
-        margin-right:30px;
+         margin-right: 2.631578947368421% ; /* 30px (original) / 1140px (largura do pai .container)*/
     }
 
     .mobile {
@@ -194,10 +217,14 @@ Seção .CONTAINER - Conteúdo com 3 colunas
         background-color: #FCDA92;
     }
 
-    #desktop img, #tablet img, #mobile img{
-     margin: 10px auto -15px auto;
-     text-align:center;
-    }
+        .container figure {
+            margin: 15px auto 0px auto;
+            width: 69.4444444444%;
+            /* 250px (original, que não estava no tutorial)
+
+            / 360px (largura dos pais: .desk, .mobil., .tabl*/
+
+        }
 
     /*
         Texto do Container
@@ -205,9 +232,9 @@ Seção .CONTAINER - Conteúdo com 3 colunas
 
     .container h3 {
         color: #fff;
-        font-size: 32px;
+        font-size: 1.77777777778em; /* 32px originais / 18px (body - pai)*/
         font-weight: 300;
-        letter-spacing: -2px;
+        letter-spacing: -0.0625em; /* -2px (originais) / 32 px (contexto próprio elemento)*/
         margin-bottom: 30px;
         text-shadow: none;
     }
@@ -216,9 +243,9 @@ Seção .CONTAINER - Conteúdo com 3 colunas
         background-color: #fff;
         float: left;
         height: 160px;
-        padding: 7px;
+        padding: 1.94444444444445%; /* 7px (original) / 360px (próprio elemento por ser padding) */
         position: absolute;
-        width-max: 360px;
+        width-max: 100%;
         text-align: justify;
         top: 225px;
     }
@@ -228,21 +255,23 @@ Seção .CONTAINER - Conteúdo com 3 colunas
     */
 
     span.btn {
-        font-size: 20px;
+        font-size: 1.1111111111em; /* 20px (original) / 18px (do contexto body - elemento herdado)*/
         font-weight: 400;
-        letter-spacing: -2px;
+        letter-spacing: -0.1em; /*-2px (original) / 20px (elemento pai, próprio span)*/
         height: 27px;
         margin-top: 30px;
         position: absolute;
         right: 1px;
         text-align: center;
         text-shadow: none;
-        width: 120px;
+        width: 33.3333333333%; /* 120px (original) / 360px (largura do pai que é
+
+        .tablet; .desktop; .mobile*/
     }
 
     span.btn a {
         color: #fff;
-        padding: 2px 4px;+
+        padding: 2px 3.3333333333%; /* 4px (original) / 120px (próprio elemento por ser padding)*/
     }
 
     .desktop span.btn a{
@@ -263,17 +292,17 @@ footer {
     clear: both;
     height: 50px;
     padding: 10px 0px;
-    width: 1200px;
+    width: 100%; /*1200px (original) / 1200px (container pai: class .center)*/
 }
 
     .copyright {
         float: left;
-        margin-left: 30px;
+        margin-left: 2.5%px; /* 30px (original) / 1200px (container pai: footer, por ser margin)*/
     }
 
     .desenvolvedor {
         float: right;
     }
         .desenvolvedor figure {
-            width: 182px;
+            width: 100%;
         }
