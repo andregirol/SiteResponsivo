@@ -332,12 +332,63 @@ footer {
 }
 
 
+
+
 /*
 960px – Tablets no formato paisagem e alguns monitores mais antigos
 ***********************************************************/
 @media screen and (max-width: 960px){
+    header h1 a {
+        width: 37.5%; /* 360px (novo tamanho) / 960px(nova resolução)*/
+    }
 
+    nav {
+        width: 62.5%; /*600px / 960px*/
+    }
+
+    h2 {
+        font-size: 2.66666666667em; /*48px / 18px (body)*/
+    }
+
+/*  .chamada */
+    .chamada {
+        height: 250px;
+    }
+        .chamada h3 {
+            font-size: 1.5em; /*27px / 18px*/
+            width: 88.5416666666667% /* 850px (nova medida) / 960px*/
+        }
+
+/*    .container */
+     .container {
+        height: 425px;
+        padding: 3.125% ; /*30px / 960px (novo contexto do padding)*/
+        width: 93.75%; /* 100% original - 6.25 de padding (esq. e direita)*/
+    }
+        .desktop, .tablet, .mobile{
+            width: 31.4583333333333%; /* 302px / 960px*/
+        }
+
+        .container .desktop figure, .container .tablet figure, .container .mobile figure {
+               width:66.22516556291391%; /* 200px ÷ 302px %*/
+        }
+
+            .container img {
+                height: 100px;
+            }
+
+        .container h3 {
+            font-size: 1.6666666667em; /* 30px / 18px*/
+        }
+
+        .container p {
+            font-size: 0.8333333333em; /*15px ÷ 18px*/
+            top: 230px;
+        }
 }
+
+
+
 /*
 768px – Tablets no formato retrato, como o iPad
 ***********************************************************/
