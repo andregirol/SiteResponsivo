@@ -119,22 +119,22 @@ img, picture, video, embed {
 
 h1, h2 {
     color: #FE9380;
-    font-size: 60px;
+    font-size: 3.3333333333em; /* 60px (original) / 18px (body)*/
     font-weight: 800;
-    letter-spacing: -3px;
-    line-height: 60px;
+    letter-spacing: -0.05em; /*-3px (original) / 60px (contexto é o próprio h2)*/
+    line-height: 1em; /* 60/60 (o contexto é a própria linha)*/
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 1.7777777778em; /* 32px ÷ 18px (body)  */;
     font-weight: 300;
-    letter-spacing: -2px; /* Espaçamento entre as letras */
-    line-height: 38px;
+    letter-spacing: -0.0625em; /* -2px ÷ 32px */
+	line-height: 1.1875em; /* 38px ÷ 32px */
 }
 
 p {
     font-weight: 300;
-    letter-spacing: -1px;
+    letter-spacing: -0.05555555556em; /* -1px ÷ 18px = -0.05555555556em */
 }
 
 a, a:link, a:visited {
@@ -306,3 +306,53 @@ footer {
         .desenvolvedor figure {
             width: 100%;
         }
+
+/* ====================
+    MEDIA QUERIES
+=======================*/
+/*
+1200px – Desktops, notebooks com monitores widescreen
+***********************************************************/
+@media screen and (max-width: 1200px){
+    .chamada h3 {
+        font-size: 1.66666666667em; /*
+        30px (nova medida para caber no novo device)
+        / 18px (medida do body)
+        */
+    }
+
+    .container h3 {
+        font-size: 1.55555555556em; /*  28px ÷ 18px */
+    }
+
+    .container p {
+        height: 170px;
+        top: 217px;
+    }
+}
+
+
+/*
+960px – Tablets no formato paisagem e alguns monitores mais antigos
+***********************************************************/
+@media screen and (max-width: 960px){
+
+}
+/*
+768px – Tablets no formato retrato, como o iPad
+***********************************************************/
+@media screen and (max-width=768px){
+
+}
+/*
+480px – Smartphones no formato paisagem com tela pequena
+***********************************************************/
+@media screen and (max-width=480px){
+
+}
+/*
+320px – Smartphones no formato retrato com tela pequena
+***********************************************************/
+@media screen and (max-width=320px){
+
+}
