@@ -217,7 +217,7 @@ Seção .CONTAINER - Conteúdo com 3 colunas
         background-color: #FCDA92;
     }
 
-        .container figure {
+        .container .desktop figure, .container .tablet figure, .container .mobile figure {
             margin: 15px auto 0px auto;
             width: 69.4444444444%;
             /* 250px (original, que não estava no tutorial)
